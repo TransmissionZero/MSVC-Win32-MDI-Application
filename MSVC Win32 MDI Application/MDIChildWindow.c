@@ -1,8 +1,8 @@
 #include "stdafx.h"
-#include "MDIChildWindow.h"
-#include "MainWindow.h"
-#include "Resource.h"
 #include "Globals.h"
+#include "MainWindow.h"
+#include "MDIChildWindow.h"
+#include "Resource.h"
 
 /* MDI child window class and title */
 static LPCTSTR MDIChildWndClass = TEXT("Win32 MDI Example Application - Child");
@@ -41,7 +41,7 @@ LRESULT CALLBACK MDIChildWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPar
       UINT enableMenu;
       HWND hActivatedChild = (HWND)lParam;
 
-      /* If this window is the one being activated, enable its menus. */
+      /* If this window is the one being activated, enable its menus */
       if (hWnd == hActivatedChild)
       {
         enableMenu = MF_ENABLED;

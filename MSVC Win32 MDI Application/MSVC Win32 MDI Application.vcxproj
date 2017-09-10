@@ -105,6 +105,9 @@
     <Manifest>
       <AdditionalManifestFiles>Application.manifest</AdditionalManifestFiles>
     </Manifest>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -121,6 +124,9 @@
     <Manifest>
       <AdditionalManifestFiles>Application.manifest</AdditionalManifestFiles>
     </Manifest>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -141,6 +147,9 @@
     <Manifest>
       <AdditionalManifestFiles>Application.manifest</AdditionalManifestFiles>
     </Manifest>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -161,6 +170,9 @@
     <Manifest>
       <AdditionalManifestFiles>Application.manifest</AdditionalManifestFiles>
     </Manifest>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AboutDialog.h" />

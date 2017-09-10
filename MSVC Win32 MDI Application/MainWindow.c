@@ -1,9 +1,9 @@
 #include "stdafx.h"
+#include "AboutDialog.h"
+#include "Globals.h"
 #include "MainWindow.h"
 #include "MDIChildWindow.h"
-#include "AboutDialog.h"
 #include "Resource.h"
-#include "Globals.h"
 
 /* Main window class and title */
 static LPCTSTR MainWndClass = TEXT("Win32 MDI Example Application");
@@ -200,6 +200,7 @@ BOOL RegisterMainWindowClass()
 {
   WNDCLASSEX wc;
 
+  /* Class for our main window */
   wc.cbSize        = sizeof(wc);
   wc.style         = 0;
   wc.lpfnWndProc   = &MainWndProc;
@@ -220,16 +221,14 @@ BOOL RegisterMainWindowClass()
 /* Create an instance of our main window */
 HWND CreateMainWindow()
 {
-  HWND hWnd;
-  HMENU hSysMenu;
-
-  hWnd = CreateWindowEx(WS_EX_CLIENTEDGE, MainWndClass, MainWndClass, WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN,
-                        CW_USEDEFAULT, CW_USEDEFAULT, 640, 480, NULL, NULL, g_hInstance, NULL);
+  /* Create instance of main window */
+  HWND hWnd = CreateWindowEx(WS_EX_CLIENTEDGE, MainWndClass, MainWndClass, WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN,
+                             CW_USEDEFAULT, CW_USEDEFAULT, 640, 480, NULL, NULL, g_hInstance, NULL);
 
   if (hWnd)
   {
     /* Add "about" to the system menu */
-    hSysMenu = GetSystemMenu(hWnd, FALSE);
+    HMENU hSysMenu = GetSystemMenu(hWnd, FALSE);
     InsertMenu(hSysMenu, 5, MF_BYPOSITION | MF_SEPARATOR, 0, NULL);
     InsertMenu(hSysMenu, 6, MF_BYPOSITION, ID_HELP_ABOUT, TEXT("About"));
   }

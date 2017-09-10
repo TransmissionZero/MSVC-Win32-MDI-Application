@@ -1,8 +1,8 @@
 #include "stdafx.h"
+#include "Globals.h"
 #include "MainWindow.h"
 #include "MDIChildWindow.h"
 #include "Resource.h"
-#include "Globals.h"
 
 /* Global instance handle */
 HINSTANCE g_hInstance = NULL;
@@ -26,7 +26,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
   icc.dwICC = ICC_WIN95_CLASSES;
   InitCommonControlsEx(&icc);
 
-  /* Register our main window class */
+  /* Register our main window class, or error */
   if (!RegisterMainWindowClass())
   {
     MessageBox(NULL, TEXT("Error registering main window class."), TEXT("Error"), MB_ICONERROR | MB_OK);
@@ -40,7 +40,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     return 0;
   }
 
-  /* Create our main window */
+  /* Create our main window, or error */
   if (!(hWnd = CreateMainWindow()))
   {
     MessageBox(NULL, TEXT("Error creating main window."), TEXT("Error"), MB_ICONERROR | MB_OK);
